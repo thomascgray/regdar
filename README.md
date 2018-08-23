@@ -28,7 +28,6 @@ Regdar.getCharacter(0123456789)
 
 ## API
 
-
 ### getCharacter(characterId) : Promise
 
 Resolves to a character object.
@@ -36,16 +35,17 @@ Resolves to a character object.
 Character object schema below
 
 ```js
+// As of v1.0.1
 {
   name: 'Bhaal',
   race: 'Half-Orc',
+  class: 'Warlock 1',
   classes: [
     {
       level: 1,
       name: 'Warlock'
     }
   ],
-  class: 'Warlock 1',
   abilities: {
     str: {
       modifier: -2,
