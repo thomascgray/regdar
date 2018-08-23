@@ -1,0 +1,22 @@
+{
+  "name": "regdar",
+  "version": "1.0.0",
+  "description": "regdar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomascgray/regdar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomascgray/regdar/issues"
+  },
+  "homepage": "https://github.com/thomascgray/regdar#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
