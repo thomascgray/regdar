@@ -7,7 +7,7 @@ Allows you to query D&D Beyond for various data entities based on IDs.
 ## Local Dev
 
 - `npm i`
-- `npm test`
+- `npm test` to run the tests, or `node sandbox/index.js` and play around with the sandbox environment
 
 ## Using the library
 
@@ -37,26 +37,41 @@ Character object schema below
 
 ```js
 {
-    abilities: {},
-    description: {
-        name: "Tordek",
-        gender: "Male", 
-        faith: "Gargamaal",
-        age: 60,
+  name: 'Bhaal',
+  race: 'Half-Orc',
+  classes: [
+    {
+      level: 1,
+      name: 'Warlock'
+    }
+  ],
+  class: 'Warlock 1',
+  abilities: {
+    str: {
+      modifier: -2,
+      score: 6
     },
-    hair: "Greying Black",
-    eyes: "Black",
-    skin: "Grey",
-    height: "6' 8''",
-    weight: 200,
-    inspiration: false,
-    baseHitPoints: 8,
-    bonusHitPoints: null,
-    overrideHitPoints: null,
-    removedHitPoints: 5,
-    temporaryHitPoints: 0,
-    currentXp: 0,
-    alignmentId: 6,
+    dex: {
+      modifier: 0,
+      score: 11
+    },
+    con: {
+      modifier: 2,
+      score: 14
+    },
+    int: {
+      modifier: 1,
+      score: 12
+    },
+    wis: {
+      modifier: 1,
+      score: 12
+    },
+    cha: {
+      modifier: 3,
+      score: 17
+    }
+  }
 }
 ```
 

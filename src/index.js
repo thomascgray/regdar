@@ -34,11 +34,27 @@ const extractAbilityScores = json => {
     }, {});
 }
 
+const extractClasses = json => {
+    return json.classes.map(rawClass => {
+        return {
+            level: rawClass.level,
+            name: rawClass.definition.name,
+        };
+    });
+}
+
+const simplifyClasses = classes => {
+    return classes.map(c => `${c.name} ${c.level}`).join(' | ');
+}
+
 const getCharacter = characterId => {
     return Axios.get(`https://www.dndbeyond.com/character/${characterId}/json`)
         .then(res => {
             const character = {
-                abilities: extractAbilityScores(res.data),
+                name: res.data.name,
+                race: res.data.race.fullName,
+                class: simplifyClasses(extractClasses(res.data)),
+                classes: extractClasses(res.data),
                 abilities: extractAbilityScores(res.data),
             };
             return character;
